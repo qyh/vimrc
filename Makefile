@@ -7,6 +7,7 @@ SCRIPT_DIR ?= scripts
 unzip_dir= vim
 pack_dir= pack
 install_dir= ~/.vim
+syntax= ~/.vim/syntax
 
 load_on_start = $(install_dir)/pack/plugins/start
 load_opt = $(install_dir)/pack/plugins/opt
@@ -27,10 +28,11 @@ tlist:
 	unzip $(SCRIPT_DIR)/$(TLIST) -d $(unzip_dir) 
 install:
 	mkdir -p $(load_on_start) $(load_opt) 
+	mkdir -p $(syntax)
 	cp -rf $(pack_dir)/* $(load_on_start)
 	cp -rf $(unzip_dir)/* $(install_dir)/
 	cp -rf ./.vimrc ~/.vimrc
-	cp -rf $(SCRIPT_DIR)/python.vim $(install_dir)/plugin/
+	cp -rf $(SCRIPT_DIR)/python.vim $(syntax)/
 clean :
 	-rm -rf $(pack_dir) $(unzip_dir)
 test :
