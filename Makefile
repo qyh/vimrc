@@ -29,6 +29,7 @@ install:
 	mkdir -p $(load_on_start) $(load_opt) 
 	cp -rf $(pack_dir)/* $(load_on_start)
 	cp -rf $(unzip_dir)/* $(install_dir)/
+	cp -rf ./.vimrc ~/.vimrc
 clean :
 	-rm -rf $(pack_dir) $(unzip_dir)
 test :
