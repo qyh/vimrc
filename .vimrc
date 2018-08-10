@@ -146,8 +146,11 @@ set confirm
 " 自动缩进
 set autoindent
 set cindent
-" Tab键的宽度
+" Tab键的宽度(跟据不同文件类型设置不同宽度)
 set tabstop=4
+autocmd FileType python set tabstop=4
+autocmd FileType lua set tabstop=4
+autocmd FileType go set tabstop=4
 " 统一缩进为4
 set softtabstop=4
 set shiftwidth=4
