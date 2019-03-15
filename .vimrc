@@ -146,16 +146,15 @@ set confirm
 " 自动缩进
 set autoindent
 set cindent
-" Tab键的宽度(跟据不同文件类型设置不同宽度)
+" Tab键的宽度
 set tabstop=4
-autocmd FileType python set tabstop=4
-autocmd FileType lua set tabstop=4
-autocmd FileType go set tabstop=4
 " 统一缩进为4
 set softtabstop=4
 set shiftwidth=4
 " 不要用空格代替制表符
 set noexpandtab
+" 为python指定不使用空格代替制表符
+autocmd FileType python set noexpandtab 
 " 在行和段开始处使用制表符
 set smarttab
 " 显示行号
@@ -198,7 +197,7 @@ set backspace=2
 " 允许backspace和光标键跨越行边界
 set whichwrap+=<,>,h,l
 " 可以在buffer的任何地方使用鼠标（类似office中在工作区双击鼠标定位）
-" set mouse=a
+set mouse=
 set selection=exclusive
 set selectmode=mouse,key
 " 通过使用: commands命令，告诉我们文件的哪一行被改变过
@@ -210,7 +209,7 @@ set showmatch
 " 匹配括号高亮的时间（单位是十分之一秒）
 set matchtime=1
 " 光标移动到buffer的顶部和底部时保持3行距离
-set scrolloff=0
+set scrolloff=3
 " 为C程序提供自动缩进
 set smartindent
 " 高亮显示普通txt文件（需要txt.vim脚本）
@@ -274,7 +273,6 @@ map <C-n> :NERDTreeToggle<CR>
 " open NERDTree when opening a directory
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-" 当剩余的窗口都不是文件编辑窗口时，自动退出vim
-autocmd BufEnter * if 0 == len(filter(range(1, winnr('$')), 'empty(getbufvar(winbufnr(v:val), "&bt"))')) | qa! | endif
-" js auto complete(type ctrl+x and ctrl+o triggle)
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+
+:map <F9> :set paste<CR>
+:map <F10> :set nopaste<CR>
