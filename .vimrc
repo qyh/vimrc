@@ -274,7 +274,8 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
-:map <F9> :set paste<CR>
-:map <F10> :set nopaste<CR>
+":map <F9> :set paste<CR>
+":map <F10> :set nopaste<CR>
+set pastetoggle=<F9>
 :map <F12> :set mouse=a<CR>
 :imap <F12> <Esc>:set mouse= <CR>
