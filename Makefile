@@ -36,6 +36,7 @@ install:
 	cp -rf $(unzip_dir)/* $(install_dir)/
 	cp -rf ./.vimrc ~/.vimrc
 	cp -rf $(SCRIPT_DIR)/python.vim $(syntax)/
+	git clone https://github.com/leafgarland/typescript-vim.git ~/.vim/pack/typescript/start/typescript-vim
 clean :
 	-rm -rf $(pack_dir) $(unzip_dir)
 test :
