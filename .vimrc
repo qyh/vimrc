@@ -155,6 +155,7 @@ set shiftwidth=4
 set noexpandtab
 " 为python指定不使用空格代替制表符
 autocmd FileType python set noexpandtab 
+autocmd FileType python set tabstop=4
 " 在行和段开始处使用制表符
 set smarttab
 " 显示行号
@@ -279,3 +280,17 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 set pastetoggle=<F9>
 :map <F12> :set mouse=a<CR>
 :imap <F12> <Esc>:set mouse= <CR>
+
+"vim built-in indent lines with tabs
+:set listchars=tab:\┊\ 
+:set list
+
+" using indentLine plugin
+"let g:indentLine_enabled = 1
+"let g:indentLine_setColors = 0
+"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+"let g:indentLine_color_term = 239
+"let g:indentLine_bgcolor_term = 202
+"let g:indentLine_bgcolor_gui = '#FF5F00'
+"let g:indentLine_char = 'c'
+
