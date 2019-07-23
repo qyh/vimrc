@@ -282,15 +282,15 @@ set pastetoggle=<F9>
 :imap <F12> <Esc>:set mouse= <CR>
 
 "vim built-in indent lines with tabs
-:set listchars=tab:\┊\ 
-:set list
+":set listchars=tab:\┊\ 
+":set list
 
 " using indentLine plugin
-"let g:indentLine_enabled = 1
-"let g:indentLine_setColors = 0
-"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-"let g:indentLine_color_term = 239
-"let g:indentLine_bgcolor_term = 202
-"let g:indentLine_bgcolor_gui = '#FF5F00'
-"let g:indentLine_char = 'c'
+let g:indentLine_char_list = ['┊', '┊', '┊', '┊']
+let g:indentLine_enabled = 1 
+let g:indentLine_char = '┊'             "//设置对齐线的字符
+let g:indentLine_first_char = '┊'        "      //设置对齐线的首字符
+let g:indentLine_showFirstIndentLevel = 1   "//显示对齐线首字符
+let g:indentLine_color_term = 4 "    //设置对齐线颜色
+:set list lcs=tab:\|\  
 
