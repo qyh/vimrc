@@ -159,6 +159,7 @@ autocmd FileType python set tabstop=4
 " lua,js 用空格替代tab
 autocmd FileType lua set expandtab
 autocmd FileType javascript set expandtab
+autocmd FileType typescript set expandtab
 " 在行和段开始处使用制表符
 set smarttab
 " 显示行号
