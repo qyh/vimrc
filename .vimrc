@@ -152,10 +152,13 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 " 不要用空格代替制表符
-"set noexpandtab
+set noexpandtab
 " 为python指定不使用空格代替制表符
 autocmd FileType python set noexpandtab 
 autocmd FileType python set tabstop=4
+" lua,js 用空格替代tab
+autocmd FileType lua set expandtab
+autocmd FileType javascript set expandtab
 " 在行和段开始处使用制表符
 set smarttab
 " 显示行号
