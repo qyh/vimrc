@@ -152,7 +152,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 " 不要用空格代替制表符
-set noexpandtab
+"set noexpandtab
 " 为python指定不使用空格代替制表符
 autocmd FileType python set noexpandtab 
 autocmd FileType python set tabstop=4
@@ -166,7 +166,7 @@ set history=1000
 set nobackup
 set noswapfile
 "搜索忽略大小写
-set ignorecase
+"set ignorecase
 "搜索逐字符高亮
 set hlsearch
 set incsearch
