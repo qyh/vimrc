@@ -296,5 +296,5 @@ let g:indentLine_char = '┊'             "//设置对齐线的字符
 let g:indentLine_first_char = '┊'        "      //设置对齐线的首字符
 let g:indentLine_showFirstIndentLevel = 1   "//显示对齐线首字符
 let g:indentLine_color_term = 4 "    //设置对齐线颜色
-let g:indentLine_conceallevel = 0    " json 文件不隐藏双引号
+autocmd FileType json let g:indentLine_conceallevel = 0    " json 文件不隐藏双引号
 :set list lcs=tab:\|\  
