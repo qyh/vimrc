@@ -302,7 +302,7 @@ autocmd FileType json let g:indentLine_conceallevel = 0    " json 文件不隐�
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
+"call plug#begin('~/.vim/plugged')
 "Plug 'scrooloose/syntastic'
 "Plug 'Chiel92/vim-autoformat'
-call plug#end()
+"call plug#end()
