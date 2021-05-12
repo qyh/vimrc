@@ -10,6 +10,7 @@ unzip_dir= vim
 pack_dir= pack
 install_dir= ~/.vim
 syntax= ~/.vim/syntax
+autoload=~/.vim/autoload
 
 load_on_start = $(install_dir)/pack/plugins/start
 load_opt = $(install_dir)/pack/plugins/opt
@@ -34,12 +35,14 @@ gitter:
 tlist:
 	unzip -o $(SCRIPT_DIR)/$(TLIST) -d $(unzip_dir) 
 install:
+	rm -rf $(install_dir)
 	mkdir -p $(load_on_start) $(load_opt) 
 	mkdir -p $(syntax)
 	cp -rf $(pack_dir)/* $(load_on_start)
 	cp -rf $(unzip_dir)/* $(install_dir)/
 	cp -rf ./.vimrc ~/.vimrc
 	cp -rf $(SCRIPT_DIR)/python.vim $(syntax)/
+	cp -rf $(SCRIPT_DIR)/plug.vim $(autoload)/
 	git clone https://github.com/leafgarland/typescript-vim.git ~/.vim/pack/typescript/start/typescript-vim
 clean :
 	-rm -rf $(pack_dir) $(unzip_dir)

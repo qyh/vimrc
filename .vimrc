@@ -152,7 +152,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 " 不要用空格代替制表符
-set noexpandtab
+"set noexpandtab
 " 为python指定不使用空格代替制表符
 autocmd FileType python set noexpandtab 
 autocmd FileType python set tabstop=4
@@ -291,10 +291,18 @@ set pastetoggle=<F9>
 
 " using indentLine plugin
 let g:indentLine_char_list = ['┊', '┊', '┊', '┊']
-let g:indentLine_enabled = 1 
+let g:indentLine_enabled = 0 
 let g:indentLine_char = '┊'             "//设置对齐线的字符
 let g:indentLine_first_char = '┊'        "      //设置对齐线的首字符
 let g:indentLine_showFirstIndentLevel = 1   "//显示对齐线首字符
 let g:indentLine_color_term = 4 "    //设置对齐线颜色
 autocmd FileType json let g:indentLine_conceallevel = 0    " json 文件不隐藏双引号
 :set list lcs=tab:\|\  
+
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+"Plug 'scrooloose/syntastic'
+"Plug 'Chiel92/vim-autoformat'
+call plug#end()
