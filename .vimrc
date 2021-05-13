@@ -160,6 +160,8 @@ autocmd FileType python set tabstop=4
 autocmd FileType lua set expandtab
 autocmd FileType javascript set expandtab
 autocmd FileType typescript set expandtab
+autocmd FileType c set expandtab
+autocmd FileType cplusplus set expandtab
 " 在行和段开始处使用制表符
 set smarttab
 " 显示行号
@@ -302,7 +304,16 @@ autocmd FileType json let g:indentLine_conceallevel = 0    " json 文件不隐�
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
+"call plug#begin('~/.vim/plugged')
 "Plug 'scrooloose/syntastic'
 "Plug 'Chiel92/vim-autoformat'
-call plug#end()
+"call plug#end()
+"
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_checkers = ['eslint']
+let g:formatters_javascript = ['eslint']
+let g:formatters_typescript = ['eslint']
+let g:syntastic_always_populate_loc_list = 1
+let g:formatdef_eslint = '"SRC=eslint-temp-${RANDOM}.js; cat - >$SRC; eslint --fix $SRC >/dev/null 2>&1; cat $SRC | perl -pe \"chomp if eof\"; rm -f $SRC"'

@@ -43,6 +43,8 @@ install:
 	cp -rf ./.vimrc ~/.vimrc
 	cp -rf $(SCRIPT_DIR)/python.vim $(syntax)/
 	cp -rf $(SCRIPT_DIR)/plug.vim $(autoload)/
+	cp -rf syntastic $(install_dir)/
+	cp -rf vim-autoformat $(install_dir)/
 	git clone https://github.com/leafgarland/typescript-vim.git ~/.vim/pack/typescript/start/typescript-vim
 clean :
 	-rm -rf $(pack_dir) $(unzip_dir)
